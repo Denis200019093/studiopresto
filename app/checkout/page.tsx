@@ -29,7 +29,6 @@ const Checkout = () => {
 
   const submitCheckoutForm: SubmitHandler<CheckoutTypes> = async (e) => {
     console.log(e, cart);
-    toast("Еhe order is successful", { type: "success" });
 
     try {
       await fetch("/api/mail", {
@@ -39,6 +38,7 @@ const Checkout = () => {
         method: "POST",
         body: JSON.stringify({ toEmail: e.email }),
       });
+      toast("Еhe order is successful", { type: "success" });
     } catch (error) {
       console.log(error);
     }

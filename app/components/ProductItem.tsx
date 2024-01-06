@@ -1,10 +1,9 @@
 "use client";
 
-import { FC, ReactNode } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { FC, ReactNode } from "react";
 
-import useCart from "@/hooks/useCart";
 import { ProductItemsTypes } from "@/types/product-types";
 
 const ProductItem: FC<{ product: ProductItemsTypes; children?: ReactNode }> = ({

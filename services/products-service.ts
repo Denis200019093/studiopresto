@@ -19,12 +19,12 @@ export const productsApi = createApi({
         return args;
       },
       merge: (currentCache, newItems) => {
-        currentCache.forEach((currentItem) => {
-          newItems.forEach((newItem) => {
-            if (currentItem.id !== newItem.id) {
-              currentCache.push(newItem);
-            }
-          });
+        newItems.forEach((newItem) => {
+          if (
+            !currentCache.some((currentItem) => currentItem.id === newItem.id)
+          ) {
+            currentCache.push(newItem);
+          }
         });
       },
     }),

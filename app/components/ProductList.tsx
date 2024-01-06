@@ -2,11 +2,11 @@
 
 import { useMemo, useState } from "react";
 
+import useCart from "@/hooks/useCart";
 import ProductItem from "./ProductItem";
 import { useAppSelector } from "@/hooks/useRedux";
 import { useDebounce } from "@/hooks/useDebounce";
 import { useGetProductsQuery } from "@/services/products-service";
-import useCart from "@/hooks/useCart";
 
 const ProductList = () => {
   const [limit, setLimit] = useState(6);
@@ -23,6 +23,7 @@ const ProductList = () => {
     limit,
   });
 
+  // Такий пошук мав бути на стороні клієнта?
   const filteredProducts = useMemo(() => {
     return products?.filter((product) =>
       product.title.includes(debouncedValue)

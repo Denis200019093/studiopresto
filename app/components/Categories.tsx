@@ -3,7 +3,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import { useAppSelector } from "@/hooks/useRedux";
 import { setCategory, resetCategory } from "@/redux/slices/categories-slice";
 import { useGetCategoriesQuery } from "@/services/categories-service";

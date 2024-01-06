@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
-export async function POST(req: Request, res: Response) {
+export async function POST(req: Request) {
   try {
     const body: { toEmail: string } = await req.json();
-
-    console.log(body);
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -19,7 +17,7 @@ export async function POST(req: Request, res: Response) {
       from: process.env.NODEMAILER_EMAIL,
       to: body.toEmail,
       subject: "Studiopresto",
-      text: "Замовлення оформленно",
+      text: "Замовлення оформлено",
     };
 
     await transporter.sendMail(mailOptions);

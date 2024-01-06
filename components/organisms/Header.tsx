@@ -5,7 +5,7 @@ import Link from "next/link";
 // Icons
 import { BsCart4 } from "react-icons/bs";
 
-import { cn } from "@/utils";
+import { cn } from "@/lib/utils";
 import useCart from "@/hooks/useCart";
 import { useAppSelector } from "@/hooks/useRedux";
 
