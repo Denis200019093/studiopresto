@@ -26,7 +26,7 @@ const ProductList = () => {
   // Такий пошук мав бути на стороні клієнта?
   const filteredProducts = useMemo(() => {
     return products?.filter((product) =>
-      product.title.includes(debouncedValue)
+      product.title.toLowerCase().includes(debouncedValue.toLowerCase())
     );
   }, [debouncedValue, products]);
 
